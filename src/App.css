@@ -28,6 +28,16 @@
   color: #61dafb;
 }
 
+.nav-text{
+
+  margin-left: 5%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color: azure;
+
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

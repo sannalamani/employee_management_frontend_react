@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import EmployeeService from '../services/EmployeeService'
+import { Link } from 'react-router-dom'
 
 const EmployeeListComponent = () => {
 
@@ -25,7 +26,7 @@ const EmployeeListComponent = () => {
     
     <div className = "container">
             <h2 className = "text-center"> List Employees </h2>
-            
+            <Link to={'/employee/create'}  className='btn btn-primary' >Add Employee</Link>
             <table className="table table-bordered table-striped">
                 <thead>
                     <th> Employee Id </th>
@@ -46,8 +47,10 @@ const EmployeeListComponent = () => {
                                 <td>{employee.e_role}</td>
                                 <td>{employee.salary}</td>
                                 <td>{employee.email}</td>
+                               
                                 
                             </tr>
+                             
                         )
                         )
                             }
