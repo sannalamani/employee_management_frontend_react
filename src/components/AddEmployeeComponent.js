@@ -1,6 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import {  useState } from 'react'
+import { Link , useNavigate } from 'react-router-dom'
+import {  useState  } from 'react'
+
 import EmployeeService from '../services/EmployeeService'
 
 
@@ -10,6 +11,9 @@ const AddEmployeeComponent = () => {
   const [e_role, setRole] = useState('')
   const [salary, setSalary] = useState('')
   const [email, setEmail] = useState('')
+
+  const navigate = useNavigate();
+
  
 
 
@@ -18,11 +22,23 @@ const AddEmployeeComponent = () => {
 
         const employee = {e_name,e_role,salary,email}
 
-        EmployeeService.createEmployee(employee)
+        EmployeeService.createEmployee(employee).then(Response => {
+
+            navigate('/employee/');
+            console.log(Response.data);
+
+        }).catch(error => {
+
+            console.log(error);
+        })
+
+        
 
         
         
     }
+
+    
 
     return (
         <div>

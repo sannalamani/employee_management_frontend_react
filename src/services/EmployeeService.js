@@ -21,7 +21,7 @@ class EmployeeService {
 
       console.log(e_id)
 
-      //return (axios.post("http://localhost:8080/employee/delete/${e_Id}"))
+    return (axios.delete(Springboot_Rest_API+e_id))
     }
       };
     const service_obj = new EmployeeService()
